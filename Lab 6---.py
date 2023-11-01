@@ -10,9 +10,13 @@ def encoder(password):
         else:
             encoded_pass += digit
         return encoded_pass
-
-
-
+# defining decoder
+def decoder(password):
+    decoded_pass = ''
+    for i in password:
+        i = int(i) - 3
+        decoded_pass += str(i)
+    return decoded_pass
 
 def menu():
     print('Menu')
@@ -34,7 +38,11 @@ if __name__ == '__main__':
             encoded_pass = encoder(password)
             print('Your password has been encoded and stored!')
             print()
-
+        elif option == '2':
+            password = input('Please enter your password to decode: ')
+            decoded_pass = decoder(password)
+            print('Your decoded password', print(decoded_pass))
+            print('')
 
 
         elif option == '3':
